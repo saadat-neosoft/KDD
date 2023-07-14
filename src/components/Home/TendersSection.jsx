@@ -7,7 +7,8 @@ import ctIcon from "../../assets/Homepage Design/Group 20.svg";
 import arrowIcon from "../../assets/Homepage Design/Icon feather-arrow-down.svg";
 import { useState } from "react";
 
-import { BsDot } from "react-icons/bs";
+import { BsDot, BsDownload } from "react-icons/bs";
+import { BiMessage } from "react-icons/bi";
 
 const TendersSection = () => {
   const [isDropDownActive, setIsDropDownActive] = useState(0);
@@ -117,6 +118,179 @@ const TendersSection = () => {
                       sed do eiusmod tempor incididunt ut labor et dolore magna
                       aliqua.
                     </p>
+                    <div className="tenders__right__cards__card__right__dropdown-content__date">
+                      Due Date:{" "}
+                      <span className="tenders__right__cards__card__right__dropdown-content__date__num">
+                        02/22
+                      </span>
+                    </div>
+                    <div className="d-flex align-items-center gap-2 mt-3 tenders__right__cards__card__right__dropdown-content__dca">
+                      <span className="d-flex gap-2 tenders__right__cards__card__right__dropdown-content__download">
+                        <BsDownload /> Download
+                      </span>{" "}
+                      |
+                      <span className="tenders__right__cards__card__right__dropdown-content__connect d-flex gap-2">
+                        <BiMessage /> Connect with Us
+                      </span>{" "}
+                      |
+                      <span className="tenders__right__cards__card__right__dropdown-content__apply d-flex gap-2 align-items-center ">
+                        Apply for Tender{" "}
+                        <img src={arrowIcon} height="12px" alt="arrow" />
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div className="tenders__right__cards__card__right__dropdown-content__item d-flex w-100 pt-2">
+                  <div className="align-self-start ">
+                    <BsDot color="#44ba10" size={30} />
+                  </div>
+                  <div className="d-flex flex-column w-100 mt-2  ">
+                    <div className="d-flex justify-content-between ">
+                      <span className="tenders__right__cards__card__right__dropdown-content__title">
+                        Title 1
+                      </span>
+                      <span className="tenders__right__cards__card__right__dropdown-content__time">
+                        <span className="tenders__right__cards__card__right__dropdown-content__time__red">
+                          08
+                        </span>{" "}
+                        Hrs:{" "}
+                        <span className="tenders__right__cards__card__right__dropdown-content__time__red">
+                          58
+                        </span>{" "}
+                        Mins:{" "}
+                        <span className="tenders__right__cards__card__right__dropdown-content__time__red">
+                          40
+                        </span>{" "}
+                        Secs
+                      </span>
+                    </div>
+                    <p className="tenders__right__cards__card__right__dropdown-content__description">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labor et dolore magna
+                      aliqua.
+                    </p>
+                    <div className="tenders__right__cards__card__right__dropdown-content__date">
+                      Due Date:{" "}
+                      <span className="tenders__right__cards__card__right__dropdown-content__date__num">
+                        02/22
+                      </span>
+                    </div>
+                    <div className="d-flex align-items-center gap-2 mt-3 tenders__right__cards__card__right__dropdown-content__dca">
+                      <span className="d-flex gap-2 tenders__right__cards__card__right__dropdown-content__download">
+                        <BsDownload /> Download
+                      </span>{" "}
+                      |
+                      <span className="tenders__right__cards__card__right__dropdown-content__connect d-flex gap-2">
+                        <BiMessage /> Connect with Us
+                      </span>{" "}
+                      |
+                      <span className="tenders__right__cards__card__right__dropdown-content__apply d-flex gap-2 align-items-center ">
+                        Apply for Tender{" "}
+                        <img src={arrowIcon} height="12px" alt="arrow" />
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div className="tenders__right__cards__card__right__dropdown-content__item d-flex w-100 pt-2">
+                  <div className="align-self-start ">
+                    <BsDot color="#44ba10" size={30} />
+                  </div>
+                  <div className="d-flex flex-column w-100 mt-2  ">
+                    <div className="d-flex justify-content-between ">
+                      <span className="tenders__right__cards__card__right__dropdown-content__title">
+                        Title 1
+                      </span>
+                      <span className="tenders__right__cards__card__right__dropdown-content__time">
+                        <span className="tenders__right__cards__card__right__dropdown-content__time__red">
+                          08
+                        </span>{" "}
+                        Hrs:{" "}
+                        <span className="tenders__right__cards__card__right__dropdown-content__time__red">
+                          58
+                        </span>{" "}
+                        Mins:{" "}
+                        <span className="tenders__right__cards__card__right__dropdown-content__time__red">
+                          40
+                        </span>{" "}
+                        Secs
+                      </span>
+                    </div>
+                    <p className="tenders__right__cards__card__right__dropdown-content__description">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labor et dolore magna
+                      aliqua.
+                    </p>
+                    <div className="tenders__right__cards__card__right__dropdown-content__date">
+                      Due Date:{" "}
+                      <span className="tenders__right__cards__card__right__dropdown-content__date__num">
+                        02/22
+                      </span>
+                    </div>
+                    <div className="d-flex align-items-center gap-2 mt-3 tenders__right__cards__card__right__dropdown-content__dca">
+                      <span className="d-flex gap-2 tenders__right__cards__card__right__dropdown-content__download">
+                        <BsDownload /> Download
+                      </span>{" "}
+                      |
+                      <span className="tenders__right__cards__card__right__dropdown-content__connect d-flex gap-2">
+                        <BiMessage /> Connect with Us
+                      </span>{" "}
+                      |
+                      <span className="tenders__right__cards__card__right__dropdown-content__apply d-flex gap-2 align-items-center ">
+                        Apply for Tender{" "}
+                        <img src={arrowIcon} height="12px" alt="arrow" />
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div className="tenders__right__cards__card__right__dropdown-content__item d-flex w-100 pt-2">
+                  <div className="align-self-start ">
+                    <BsDot color="#44ba10" size={30} />
+                  </div>
+                  <div className="d-flex flex-column w-100 mt-2  ">
+                    <div className="d-flex justify-content-between ">
+                      <span className="tenders__right__cards__card__right__dropdown-content__title">
+                        Title 1
+                      </span>
+                      <span className="tenders__right__cards__card__right__dropdown-content__time">
+                        <span className="tenders__right__cards__card__right__dropdown-content__time__red">
+                          08
+                        </span>{" "}
+                        Hrs:{" "}
+                        <span className="tenders__right__cards__card__right__dropdown-content__time__red">
+                          58
+                        </span>{" "}
+                        Mins:{" "}
+                        <span className="tenders__right__cards__card__right__dropdown-content__time__red">
+                          40
+                        </span>{" "}
+                        Secs
+                      </span>
+                    </div>
+                    <p className="tenders__right__cards__card__right__dropdown-content__description">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labor et dolore magna
+                      aliqua.
+                    </p>
+                    <div className="tenders__right__cards__card__right__dropdown-content__date">
+                      Due Date:{" "}
+                      <span className="tenders__right__cards__card__right__dropdown-content__date__num">
+                        02/22
+                      </span>
+                    </div>
+                    <div className="d-flex align-items-center gap-2 mt-3 tenders__right__cards__card__right__dropdown-content__dca">
+                      <span className="d-flex gap-2 tenders__right__cards__card__right__dropdown-content__download">
+                        <BsDownload /> Download
+                      </span>{" "}
+                      |
+                      <span className="tenders__right__cards__card__right__dropdown-content__connect d-flex gap-2">
+                        <BiMessage /> Connect with Us
+                      </span>{" "}
+                      |
+                      <span className="tenders__right__cards__card__right__dropdown-content__apply d-flex gap-2 align-items-center ">
+                        Apply for Tender{" "}
+                        <img src={arrowIcon} height="12px" alt="arrow" />
+                      </span>
+                    </div>
                   </div>
                 </div>
               </div>

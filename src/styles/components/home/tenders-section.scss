@@ -84,17 +84,39 @@
             top: 93%;
             background-color: white;
             width: 100%;
-            border-radius: 0 0 0.25rem 0.25rem;
-            padding: 10px 30px;
+            border-radius: 0 0 1rem 1rem;
+            padding: 20px 30px;
             box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1);
             opacity: 0;
-            transform: translateY(-40px);
+            transform: translateY(-30px);
             transition: opacity 450ms ease-in-out, transform 450ms ease-in-out;
             pointer-events: none;
             z-index: 1;
 
+            height: 600px;
+            overflow-x: auto;
+
+            &::-webkit-scrollbar {
+              width: 3px;
+            }
+
+            &::-webkit-scrollbar-track {
+              background: #ebebeb;
+              border-radius: 20px;
+            }
+
+            &::-webkit-scrollbar-thumb {
+              background: #ee2a2a;
+              border-radius: 20px;
+            }
+
+            &__item {
+              border-bottom: 1px solid #ee2a2a;
+              padding-bottom: 20px;
+            }
+
             &__status {
-              border-bottom: 1px solid red;
+              border-bottom: 1px solid #ee2a2a;
               padding-bottom: 15px;
               padding-left: 5px;
               padding-right: 5px;
@@ -106,9 +128,20 @@
             }
 
             &__description {
+              margin-top: 12px;
+              color: #707070;
+              font-size: 0.9rem;
+            }
+
+            &__date {
               margin-top: 8px;
               color: #707070;
               font-size: 0.9rem;
+
+              &__num {
+                color: #4d4d4d;
+                font-weight: bold;
+              }
             }
 
             &__time {
@@ -125,6 +158,23 @@
                 font-size: 1rem;
                 font-weight: bold;
               }
+            }
+            &__dca {
+              color: #989898;
+            }
+
+            &__download {
+              color: #989898;
+              font-weight: bold;
+            }
+            &__connect {
+              color: #989898;
+              font-weight: bold;
+            }
+            &__apply {
+              color: #ee2a2a;
+              font-weight: bold;
+              text-decoration: underline;
             }
           }
 
