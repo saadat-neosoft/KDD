@@ -1,0 +1,103 @@
+.contact-us {
+  padding-left: 10px;
+  padding-bottom: 40px;
+  &__card {
+    background-color: #ee2a2a;
+    padding: 40px 40px 40px 40px;
+    border-radius: 0px 40px;
+
+    &__title {
+      font-size: 1.8rem;
+      color: #fff;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    &__text {
+      color: #fff;
+      font-size: 0.8rem;
+      margin-bottom: 48px;
+    }
+
+    &__call {
+      color: #fff;
+      font-size: 0.9rem;
+      margin-bottom: 15px;
+    }
+    &__email {
+      color: #fff;
+      font-size: 0.9rem;
+      margin-bottom: 10px;
+    }
+    &__location {
+      color: #fff;
+      font-size: 0.9rem;
+      margin-bottom: 38px;
+      line-height: 1.4rem;
+
+      &__address {
+        display: flex;
+        flex-direction: column;
+        margin-top: 22px;
+        margin-left: 3px;
+
+        &__text {
+          font-weight: bold;
+        }
+      }
+    }
+  }
+  &__form-section {
+    width: 100%;
+    padding: 50px;
+    padding-right: 200px;
+
+    &__form {
+      &__top {
+        &__input {
+          border-radius: 16px;
+          box-shadow: 6px 6px 25px #ee2a2a0f;
+          border: 1px solid #cbc7c7;
+          width: 45%;
+          outline: none;
+
+          &::placeholder {
+            color: #000;
+            opacity: 0.25;
+          }
+        }
+      }
+      &__middle {
+        &__textarea {
+          height: 150px;
+          border-radius: 16px;
+          box-shadow: 6px 6px 25px #ee2a2a0f;
+          border: 1px solid #cbc7c7;
+          resize: none;
+          outline: none;
+
+          &::placeholder {
+            color: #000;
+            opacity: 0.25;
+          }
+        }
+      }
+      &__bottom {
+        &__submit {
+          background-color: #ee2a2a;
+          border: none;
+          border-radius: 47px;
+          color: #fff;
+          padding: 15px 30px;
+          border: 1px solid #ee2a2a;
+          font-weight: bold;
+
+          &:hover {
+            background-color: #fff;
+            color: #ee2a2a;
+          }
+        }
+      }
+    }
+  }
+}

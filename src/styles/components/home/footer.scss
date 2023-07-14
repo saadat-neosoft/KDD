@@ -1,0 +1,27 @@
+.footer {
+  border-top: 1px solid #fbd8d8;
+  padding-right: 200px;
+  padding-top: 50px;
+  padding-bottom: 20px;
+
+  &__quick-links {
+    &__title {
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+  }
+
+  &__connect {
+    &__title {
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+
+    &__icons {
+      a > img {
+        height: 35px;
+        width: 35px;
+      }
+    }
+  }
+}
