@@ -1,8 +1,27 @@
+import { useState } from "react";
 import "../styles/components/login/login.scss";
 
 import { RxCross2 } from "react-icons/rx";
 
-const LoginCard = ({ setIsLoginClicked }) => {
+const LoginCard = ({ setIsLoginClicked, setIsUserLoggedIn }) => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (!email || !password) {
+      alert("Please fill in all fields");
+      return;
+    }
+
+    if (email === "admin@kdd.com" && password === "admin") {
+      setIsUserLoggedIn(true);
+      setIsLoginClicked(false);
+    } else {
+      alert("Wrong credentials");
+    }
+  };
   return (
     <div className="login">
       <div className="login__card">
@@ -38,6 +57,8 @@ const LoginCard = ({ setIsLoginClicked }) => {
               id="email"
               name="email"
               placeholder="Email"
+              onChange={(e) => setEmail(e.target.value)}
+              value={email}
             />
           </label>
           <label
@@ -51,6 +72,8 @@ const LoginCard = ({ setIsLoginClicked }) => {
               id="password"
               name="password"
               placeholder="Password"
+              onChange={(e) => setPassword(e.target.value)}
+              value={password}
             />
           </label>
           <div className="d-flex justify-content-end ">
@@ -62,7 +85,13 @@ const LoginCard = ({ setIsLoginClicked }) => {
             </a>
           </div>
           <div className="d-flex align-items-center justify-content-center ">
-            <button className="login__card__form__btn">Login</button>
+            <button
+              type="submit"
+              className="login__card__form__btn"
+              onClick={handleSubmit}
+            >
+              Login
+            </button>
           </div>
         </form>
       </div>

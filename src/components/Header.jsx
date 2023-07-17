@@ -7,14 +7,22 @@ import { AiOutlineSearch } from "react-icons/ai";
 import { BsChevronDown } from "react-icons/bs";
 import { RxHamburgerMenu } from "react-icons/rx";
 import SearchSection from "./SearchSection";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import MenuSection from "./MenuSection";
 import LoginCard from "./LoginCard";
+import Connect1 from "./Connect1";
 
 const Header = ({ isUserLoggedIn, setIsUserLoggedIn }) => {
   const [isSearchActive, setIsSearchActive] = useState(false);
   const [isMenuActive, setIsMenuActive] = useState(false);
   const [isLoginClicked, setIsLoginClicked] = useState(false);
+  const [isConnectActive, setIsConnectActive] = useState(false);
+
+  useEffect(() => {
+    if (isUserLoggedIn) {
+      setIsConnectActive(true);
+    }
+  }, [isUserLoggedIn]);
 
   const toggleSearch = () => {
     setIsSearchActive(!isSearchActive);
@@ -130,13 +138,15 @@ const Header = ({ isUserLoggedIn, setIsUserLoggedIn }) => {
         <div className="container-fluid">
           <div className="header__content d-flex justify-content-between">
             <div className="header__content__logo">
-              <img
-                className="img-fluid ps-2 ps-sm-5"
-                src={logo}
-                alt=""
-                height="88px"
-                width="143px"
-              />
+              <a href="/">
+                <img
+                  className="img-fluid ps-2 ps-sm-5"
+                  src={logo}
+                  alt=""
+                  height="88px"
+                  width="143px"
+                />
+              </a>
             </div>
 
             <div className="header__content__nav d-flex align-items-center">
@@ -158,7 +168,7 @@ const Header = ({ isUserLoggedIn, setIsUserLoggedIn }) => {
                   href="#login"
                   onClick={() => {
                     setIsLoginClicked(true);
-                    setIsUserLoggedIn(!isUserLoggedIn);
+                    // setIsUserLoggedIn(!isUserLoggedIn);
                   }}
                 >
                   Login
@@ -178,7 +188,10 @@ const Header = ({ isUserLoggedIn, setIsUserLoggedIn }) => {
               </button>
 
               {isUserLoggedIn && (
-                <div className="header__content__nav__avatar-icon">
+                <div
+                  className="header__content__nav__avatar-icon"
+                  onClick={() => setIsUserLoggedIn(false)}
+                >
                   <span className="header__content__nav__avatar-icon__avatar">
                     NS
                   </span>
@@ -200,7 +213,20 @@ const Header = ({ isUserLoggedIn, setIsUserLoggedIn }) => {
         toggleSearch={toggleSearch}
       />
       <MenuSection isMenuActive={isMenuActive} toggleMenu={toggleMenu} />
-      {isLoginClicked && <LoginCard setIsLoginClicked={setIsLoginClicked} />}
+      {isLoginClicked && (
+        <LoginCard
+          setIsLoginClicked={setIsLoginClicked}
+          setIsUserLoggedIn={setIsUserLoggedIn}
+        />
+      )}
+
+      {isConnectActive && (
+        <Connect1
+          setIsLoginClicked={setIsLoginClicked}
+          setIsUserLoggedIn={setIsUserLoggedIn}
+          setIsConnectActive={setIsConnectActive}
+        />
+      )}
     </div>
   );
 };

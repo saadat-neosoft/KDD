@@ -15,6 +15,11 @@
     background-color: #fff;
     border-radius: 30px;
 
+    @media (max-width: 900px) {
+      width: 80%;
+      padding: 20px 15px;
+    }
+
     &__header {
       display: flex;
       align-items: center;
