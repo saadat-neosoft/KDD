@@ -4,8 +4,25 @@ import "../styles/components/header/header.scss";
 
 import { HiOutlineLanguage } from "react-icons/hi2";
 import { AiOutlineSearch } from "react-icons/ai";
+import { BsChevronDown } from "react-icons/bs";
+import { RxHamburgerMenu } from "react-icons/rx";
+import SearchSection from "./SearchSection";
+import { useState } from "react";
+import MenuSection from "./MenuSection";
+import LoginCard from "./LoginCard";
 
-const Header = () => {
+const Header = ({ isUserLoggedIn, setIsUserLoggedIn }) => {
+  const [isSearchActive, setIsSearchActive] = useState(false);
+  const [isMenuActive, setIsMenuActive] = useState(false);
+  const [isLoginClicked, setIsLoginClicked] = useState(false);
+
+  const toggleSearch = () => {
+    setIsSearchActive(!isSearchActive);
+  };
+  const toggleMenu = () => {
+    setIsMenuActive(!isMenuActive);
+  };
+
   return (
     // <nav className="navbar navbar-expand-lg">
     //   <div className="container">
@@ -109,12 +126,12 @@ const Header = () => {
     //   </div>
     // </nav>
     <div className="sticky-top">
-      <nav className="header pt-4 pe-5 bg-white">
+      <nav className="header pt-2 pe-1 pe-lg-5 bg-white">
         <div className="container-fluid">
-          <div className="header__content d-flex justify-content-between  ">
+          <div className="header__content d-flex justify-content-between">
             <div className="header__content__logo">
               <img
-                className="img-fluid ps-5"
+                className="img-fluid ps-2 ps-sm-5"
                 src={logo}
                 alt=""
                 height="88px"
@@ -122,7 +139,7 @@ const Header = () => {
               />
             </div>
 
-            <div className="header__content__nav d-flex align-items-center  ">
+            <div className="header__content__nav d-flex align-items-center">
               <a
                 href="#home"
                 className="header__content__nav__link pb-4 px-4  "
@@ -136,21 +153,54 @@ const Header = () => {
                 Contact
               </a>
 
-              <div className="header__content__nav__login-signup py-3 px-3 mb-3 mx-4 ">
-                <a href="#login">Login</a> / <a href="#signup">Signup</a>
+              <div className="header__content__nav__login-signup py-3 px-3 mb-1 mx-4 ">
+                <a
+                  href="#login"
+                  onClick={() => {
+                    setIsLoginClicked(true);
+                    setIsUserLoggedIn(!isUserLoggedIn);
+                  }}
+                >
+                  Login
+                </a>{" "}
+                / <a href="#signup">Signup</a>
               </div>
-              <span className="header__content__nav__lang mb-2 d-flex gap-1 ">
+              <span className="header__content__nav__lang mb-2 d-none  d-lg-flex gap-1 ">
                 <HiOutlineLanguage />
                 English
               </span>
               <span className="header__content__nav__hr-line"></span>
-              <button className="header__content__nav__search border-0 bg-transparent mb-2 ms-3  ">
+              <button
+                onClick={toggleSearch}
+                className="header__content__nav__search border-0 bg-transparent mb-2 ms-3"
+              >
                 <AiOutlineSearch color="#989898" size={24} />
+              </button>
+
+              {isUserLoggedIn && (
+                <div className="header__content__nav__avatar-icon">
+                  <span className="header__content__nav__avatar-icon__avatar">
+                    NS
+                  </span>
+                  <BsChevronDown type="button" size={10} className="ms-1" />
+                </div>
+              )}
+              <button
+                onClick={toggleMenu}
+                className="header__content__nav__menu border-0 bg-transparent mb-2 ms-3"
+              >
+                <RxHamburgerMenu color="#989898" size={24} />
               </button>
             </div>
           </div>
         </div>
       </nav>
+      <SearchSection
+        isSearchActive={isSearchActive}
+        toggleSearch={toggleSearch}
+      />
+      <MenuSection isMenuActive={isMenuActive} toggleMenu={toggleMenu} />
+      {isLoginClicked && <LoginCard setIsLoginClicked={setIsLoginClicked} />}
     </div>
   );
 };

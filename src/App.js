@@ -1,8 +1,9 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 import logo from "./assets/Homepage Design/Group-10.png";
+import Sample from "./pages/Sample";
 
 function App() {
   useEffect(() => {
@@ -13,10 +14,29 @@ function App() {
     document.head.appendChild(favicon);
   }, []);
 
+  const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
+
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route
+          path="/"
+          element={
+            <Home
+              isUserLoggedIn={isUserLoggedIn}
+              setIsUserLoggedIn={setIsUserLoggedIn}
+            />
+          }
+        />
+        <Route
+          path="/sample"
+          element={
+            <Sample
+              isUserLoggedIn={isUserLoggedIn}
+              setIsUserLoggedIn={setIsUserLoggedIn}
+            />
+          }
+        />
       </Routes>
     </BrowserRouter>
   );

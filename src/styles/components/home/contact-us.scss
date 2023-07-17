@@ -1,6 +1,13 @@
 .contact-us {
-  padding-left: 10px;
+  display: flex;
+  padding-left: 15px;
   padding-bottom: 40px;
+  padding-right: 15px;
+
+  @media (max-width: 720px) {
+    flex-direction: column;
+  }
+
   &__card {
     background-color: #ee2a2a;
     padding: 40px 40px 40px 40px;
@@ -52,6 +59,13 @@
     padding: 50px;
     padding-right: 200px;
 
+    @media (max-width: 1000px) {
+      padding-right: 50px;
+    }
+    @media (max-width: 500px) {
+      padding: 20px 0;
+    }
+
     &__form {
       &__top {
         &__input {
@@ -91,6 +105,7 @@
           padding: 15px 30px;
           border: 1px solid #ee2a2a;
           font-weight: bold;
+          margin-left: 5px;
 
           &:hover {
             background-color: #fff;

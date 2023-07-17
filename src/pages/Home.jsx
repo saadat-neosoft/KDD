@@ -6,10 +6,13 @@ import ContactUs from "../components/Home/ContactUs";
 import Footer from "../components/Home/Footer";
 import Copyright from "../components/Copyright";
 
-const Home = () => {
+const Home = ({ isUserLoggedIn, setIsUserLoggedIn }) => {
   return (
-    <div>
-      <Header />
+    <div className="page-container">
+      <Header
+        isUserLoggedIn={isUserLoggedIn}
+        setIsUserLoggedIn={setIsUserLoggedIn}
+      />
       <Hero />
       <TendersSection />
       <ContactUs />

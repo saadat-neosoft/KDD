@@ -39,7 +39,7 @@ const ContactUs = () => {
     recaptchaRef.current.reset();
   };
   return (
-    <section className="contact-us d-flex ">
+    <section className="contact-us ">
       <div className="contact-us__card">
         <div className="contact-us__card__title">Contact Us</div>
         <div className="contact-us__card__text">
@@ -95,12 +95,13 @@ const ContactUs = () => {
               onChange={(e) => setMessage(e.target.value)}
             />
           </div>
-          <div className="contact-us__form-section__form__bottom d-flex align-items-center justify-content-between  ">
+          <div className="contact-us__form-section__form__bottom d-flex flex-column gap-3 flex-sm-row  align-items-center justify-content-between">
             <ReCAPTCHA
               sitekey="6Ld6GyInAAAAAPCs-9789e1QPwg7pHwrw3iyqM2k"
               onChange={onChange}
               className="contact-us__form-section__form__bottom__cap"
               ref={recaptchaRef}
+              style={{ transform: "scale(0.85)" }}
             />
             <button
               type="submit"

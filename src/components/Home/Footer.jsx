@@ -6,7 +6,7 @@ import "../../styles/components/home/footer.scss";
 
 const Footer = () => {
   return (
-    <div className="footer d-flex justify-content-around ">
+    <div className="footer d-flex flex-column flex-sm-row align-items-start  justify-content-around gap-5">
       <div className="footer__logo">
         <img src={logo} alt="" />
       </div>
