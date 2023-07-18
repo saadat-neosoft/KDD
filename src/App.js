@@ -3,7 +3,8 @@ import Home from "./pages/Home";
 import { useEffect, useState } from "react";
 
 import logo from "./assets/Homepage Design/Group-10.png";
-import Sample from "./pages/Sample";
+import Dashboard from "./pages/Dashboard";
+import PrivateRoutes from "./utils/PrivateRoutes";
 
 function App() {
   useEffect(() => {
@@ -19,19 +20,16 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
+        <Route element={<PrivateRoutes isUserLoggedIn={isUserLoggedIn} />}>
+          <Route
+            path="/dashboard"
+            element={<Dashboard isUserLoggedIn={isUserLoggedIn}    setIsUserLoggedIn={setIsUserLoggedIn}/>}
+          />
+        </Route>
         <Route
           path="/"
           element={
             <Home
-              isUserLoggedIn={isUserLoggedIn}
-              setIsUserLoggedIn={setIsUserLoggedIn}
-            />
-          }
-        />
-        <Route
-          path="/sample"
-          element={
-            <Sample
               isUserLoggedIn={isUserLoggedIn}
               setIsUserLoggedIn={setIsUserLoggedIn}
             />

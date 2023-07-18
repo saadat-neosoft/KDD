@@ -5,6 +5,7 @@ import heroImg from "../../assets/Homepage Design/Mask Group 6.png";
 import arrowImg from "../../assets/Homepage Design/Icon feather-arrow-down.svg";
 
 import "../../styles/components/home/hero.scss";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
@@ -21,7 +22,10 @@ const Hero = () => {
         esse cillum dolore...
       </p>
       <button className="hero__btn">
-        Get Started <img src={arrowImg} alt="" />
+        <Link to="/dashboard" className="text-black">
+          Get Started
+        </Link>
+        <img src={arrowImg} alt="" />
       </button>
       <img src={heroImg} alt="" className="hero__img" />
     </div>
